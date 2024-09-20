@@ -16,11 +16,11 @@ public class TP0_exo1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-String prenom;
+String passion;
 Scanner sc;
 sc = new Scanner(System.in);
-System.out.println("Bonjour, quel est votre prenom ?");
-prenom = sc.nextLine();
+System.out.println("Quelle est ta passion dans la vie ?");
+passion = sc.nextLine();
     }
     
 }
