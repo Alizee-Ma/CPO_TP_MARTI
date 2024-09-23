@@ -40,7 +40,31 @@ switch (choix){
                 //Kelvin vers celcius
                 temperature = varC;
                 double Celcius = KelvinVersCelcius(temperature);
-                System.out.println(temperature + " Kelvin equivaut a " + Celcius + " Celcius");
+                System.out.println(temperature + " Kelvin equivaut a " + Celcius + " Celcius.");
+                break;
+    case 3:
+               //Farenheit vers Celcius
+               temperature = varC;
+               double Celcius2 = FarenheitVersCelcius(temperature);
+               System.out.println(temperature +"Farenheit equivaut a " +Celcius2 + " Celcius.");
+               break;
+    case 4:
+               //Celcius vers Farenheit
+               temperature = varC;
+               double Farenheit2 = CelciusVersFarenheit(temperature);
+               System.out.println(temperature + "Celcius equivaut a " +Farenheit2+ " Farenheit.");
+               break;
+    case 5:
+               //Kelvin Vers Farenheit
+               temperature = varC;
+               double Farenheit = KelvinVersFarenheit(temperature);
+               System.out.println(temperature+ " Kelvin equivaut a " +Farenheit+ " Farhenheit.");
+               break;
+    case 6:
+               //Farenheit Vers Kelvin
+               temperature = varC;
+               double Kelvin1 = FarenheitVersKelvin(temperature);
+               System.out.println(temperature+ " Farenheit equivaut a " +Kelvin1+ " Kelvin.");
 }
     }
     public static double CelciusversKelvin(double tCelcius) {
