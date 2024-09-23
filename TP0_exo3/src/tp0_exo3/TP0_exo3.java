@@ -36,6 +36,44 @@ double operande1 = sc.nextDouble(); //Stockage de la première valeur
 System.out.println("Veuillez saisir la dexuième valeur");
 double operande2 = sc.nextDouble();
 
-            }
-    
+double result = 0;
+boolean validOperation = true;
+
+switch (operateur) {
+     case 1: // Addition
+                result = operande1 + operande2;
+                break;
+            case 2: // Soustraction
+                result = operande1 - operande2;
+                break;
+            case 3: // Multiplication
+                result = operande1 * operande2;
+                break;
+            case 4: // Division
+                if (operande2 != 0) {
+                    result = operande1 / operande2;
+                } else {
+                    System.out.println("Error: Division by zero.");
+                    validOperation = false;
+                }
+                break;
+            case 5: // Modulo
+                if (operande2 != 0) {
+                    result = operande1 % operande2;
+                } else {
+                    System.out.println("Error: Division by zero.");
+                    validOperation = false;
+                }
+                break;
+            default:
+                System.out.println("Invalid operator selected.");
+                validOperation = false;
+        }
+  // Affichage du résultat si l'opération est valide
+        if (validOperation) {
+            System.out.println("The result is: " + result);
+        }
+    }
 }
+    
+
