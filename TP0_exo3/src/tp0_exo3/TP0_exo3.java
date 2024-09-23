@@ -28,12 +28,12 @@ System.out.println("5) modulo");
 //Récupération de l'opérateur voulu
 Scanner sc = new Scanner(System.in);
 int operateur =sc.nextInt();
-System.out.println("Veuillez choisir votre opérateur" +operateur);
+System.out.println("Veuillez choisir votre operateur" +operateur);
 //Demande de la première opérande
-System.out.println("Veuillez entrer la première valeur");
+System.out.println("Veuillez entrer la premiere valeur");
 double operande1 = sc.nextDouble(); //Stockage de la première valeur
 //Demande de la deuxième opérande
-System.out.println("Veuillez saisir la dexuième valeur");
+System.out.println("Veuillez saisir la dexuieme valeur");
 double operande2 = sc.nextDouble();
 
 double result = 0;
@@ -66,7 +66,7 @@ switch (operateur) {
                 }
                 break;
             default:
-                System.out.println("Invalid operator selected.");
+                System.out.println("Erreur rentrez un operateur entre 1 et 5.");
                 validOperation = false;
         }
   // Affichage du résultat si l'opération est valide
