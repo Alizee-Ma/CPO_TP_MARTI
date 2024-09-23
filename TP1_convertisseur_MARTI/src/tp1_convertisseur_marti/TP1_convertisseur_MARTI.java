@@ -20,14 +20,31 @@ public class TP1_convertisseur_MARTI {
 Scanner sc = new Scanner(System.in);
 System.out.println("veuillez entrer une premiere variable");
 Double varC =sc.nextDouble();
-System.out.print("Votre variable est "+varC);
-Double varK = 0.0;
-varK = varC + 273.15;
-System.out.print("Votre temperature en degre kelvin est "+varK);
-
+System.out.println("Veuillez choisir une convertion de temperature");
+System.out.println("1) Celsius vers Kelvin");
+System.out.println("2) Kelvin vers Celsius");
+System.out.println("3) Farenheit vers Celcius");
+System.out.println("4) Celsius vers Fahrenheit");
+System.out.println("5) Kelvin vers Farenheit");
+System.out.println("6) farenheit vers Kelvin");
+int choix = sc.nextInt();
+double temperature = 0;
+switch (choix){
+    case 1:
+                // Celsius vers Kelvin
+                temperature = varC;
+                double Kelvin = CelciusversKelvin(temperature);
+                System.out.println(temperature + " Celsius equivaut a " + Kelvin + " Kelvin.");
+                break;
+    case 2:
+                //Kelvin vers celcius
+                temperature = varC;
+                double Celcius = KelvinVersCelcius(temperature);
+                System.out.println(temperature + " Kelvin equivaut a " + Celcius + " Celcius");
+}
     }
     public static double CelciusversKelvin(double tCelcius) {
-        return tCelsius + 273.15;  //Opération de conversion
+        return tCelcius + 273.15;  //Opération de conversion
     }
     public static double KelvinVersCelcius(double tKelvin) {
         return tKelvin - 273.15; //Temperature en celsius
