@@ -4,6 +4,8 @@
  */
 package tp1_guessmynumber_marti;
 
+import java.util.Random;
+
 /**
  *
  * @author alize
@@ -15,6 +17,14 @@ public class TP1_guessMyNumber_MARTI {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Random generateurAleat = new Random();
+        for (int i = 0; i < 5; i++) {
+           // Génération d'un nombre aléatoire entre 0 et 99 inclus
+        int n = generateurAleat.nextInt(100);
+        System.out.println("Nombre aléatoire " + (i+1) + ": " + n);
+        }
     }
-    
 }
+    
+    
+
