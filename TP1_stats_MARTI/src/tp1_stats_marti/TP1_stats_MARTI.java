@@ -20,11 +20,15 @@ public class TP1_stats_MARTI {
         // TODO code application logic here
  // Création du tableau de 6 entiers (chaque case représente une face du dé)
 // Création du tableau de 6 entiers (chaque case représente une face du dé)
-        int[] des = new int[6]; // Initialisation à 0 par défaut
+        int[] faceDes = new int[6]; // Initialisation à 0 par défaut
+        System.out.println("État initial du tableau des dés :");
+        for (int i = 0; i < faceDes.length; i++) {
+            System.out.println("Face " + (i + 1) + ": " + faceDes[i]);
+        }
 
         // Demande à l'utilisateur de saisir un nombre entier m
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Veuillez saisir un nombre entier m (nombre d'itérations) : ");
+        System.out.print("Veuillez saisir un nombre entier m : ");
         int m = scanner.nextInt();
 
         // Générateur de nombres aléatoires
@@ -35,13 +39,18 @@ public class TP1_stats_MARTI {
             // Tirer un nombre aléatoire entre 0 et 5 (représentant les faces d'un dé)
             int resultatDe = random.nextInt(6); // 0 à 5
             // Incrémenter la case correspondante
-            des[resultatDe]++;
+            faceDes[resultatDe]++;
         }
 
         // Affichage du tableau résultat
         System.out.println("\nRésultat après " + m + " itérations :");
-        for (int i = 0; i < des.length; i++) {
-            System.out.println("Face " + (i + 1) + ": " + des[i] + " occurrence(s)");
+        for (int i = 0; i < faceDes.length; i++) {
+            System.out.println("Face " + (i + 1) + ": " + faceDes[i] +".");
+        }
+        System.out.println("Resultat en pourcentage");
+        for (int i=0; i < faceDes.length; i++) {
+        double pourcentage = (((double)faceDes[i]/m)*100);
+        System.out.println("Face " + (i + 1) + ": " + pourcentage +"%");
         }
 
         // Fermeture du scanner
