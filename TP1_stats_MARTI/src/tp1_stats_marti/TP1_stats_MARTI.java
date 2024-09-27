@@ -19,6 +19,7 @@ public class TP1_stats_MARTI {
     public static void main(String[] args) {
         // TODO code application logic here
  // Création du tableau de 6 entiers (chaque case représente une face du dé)
+// Création du tableau de 6 entiers (chaque case représente une face du dé)
         int[] des = new int[6]; // Initialisation à 0 par défaut
 
         // Demande à l'utilisateur de saisir un nombre entier m
