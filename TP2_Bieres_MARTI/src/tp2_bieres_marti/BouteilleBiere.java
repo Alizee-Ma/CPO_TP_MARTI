@@ -27,7 +27,7 @@ public static void main(String[] args) {
 BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls",7.0f ,"Dubuisson") ;
 BouteilleBiere secondeBiere = new BouteilleBiere("Leffe",6.6f,"Abbaye de Leffe");
 BouteilleBiere troisBiere = new BouteilleBiere("Heineken",5.0f, "Schiltigheim ");
-BouteilleBiere quatreBiere = new BouteilleBiere("")
+BouteilleBiere quatreBiere = new BouteilleBiere("Kronenbourg", 5.3f, "Obernai ");
 }
 }
 
