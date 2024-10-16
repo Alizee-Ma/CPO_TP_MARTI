@@ -10,17 +10,17 @@ package tp2_bieres_marti;
  */
 public class BouteilleBiere{
     String nom;
-    float degreAlcool;
+    double degreAlcool;
     String brasserie;
     boolean ouverte;
- BouteilleBiere(String unNom, float unDegre, String uneBrasserie) {
+ BouteilleBiere(String unNom, double unDegre, String uneBrasserie) {
 nom = unNom;
 degreAlcool = unDegre;
 brasserie = uneBrasserie;
 ouverte = false;
 }
 public void lireEtiquette(){
-    System.out.println("Bouteille de " + nom +"(" + degreAlcool +"degres) \nBrasserie :" + brasserie);
+    System.out.println("Bouteille de " + nom +" ( " + degreAlcool +" degres ) \nBrasserie : " + brasserie);
 }
 public boolean decapsuler() {
         if (!ouverte) {
@@ -32,6 +32,13 @@ public boolean decapsuler() {
             return false;
         }
     }
-
+@Override
+public String toString() {
+String chaine_a_retourner;
+chaine_a_retourner = nom + " (" + degreAlcool + " degres) Ouverte ? ";
+if (ouverte == true ) chaine_a_retourner += "oui" ;
+else chaine_a_retourner += "non" ;
+return chaine_a_retourner ;
+}
 }
 
