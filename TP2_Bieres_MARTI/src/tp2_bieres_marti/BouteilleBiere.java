@@ -22,13 +22,6 @@ ouverte = false;
 public void lireEtiquette(){
     System.out.println("Bouteille de " + nom +"(" + degreAlcool +"degres) \nBrasserie :" + brasserie);
 }
-public static void main(String[] args) {
-        // Création d'une instance de BouteilleBiere
-BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls",7.0f ,"Dubuisson") ;
-BouteilleBiere secondeBiere = new BouteilleBiere("Leffe",6.6f,"Abbaye de Leffe");
-BouteilleBiere troisBiere = new BouteilleBiere("Heineken",5.0f, "Schiltigheim ");
-BouteilleBiere quatreBiere = new BouteilleBiere("Kronenbourg", 5.3f, "Obernai ");
-}
 public boolean decapsuler() {
         if (!ouverte) {
             ouverte = true;
