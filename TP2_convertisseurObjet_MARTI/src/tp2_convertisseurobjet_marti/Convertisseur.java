@@ -9,5 +9,20 @@ package tp2_convertisseurobjet_marti;
  * @author alize
  */
 public class Convertisseur {
-    
+float CelcuisVersKelvin;
+float KelvinVersCelcuis;
+float FarenheintVersCelcuis;
+float CelcuisversFareinheit;
+float FarenheitVersKelvin;
+float KelvinVersFarenheit;
+int nbConversions;
+
+public Convertisseur () {
+nbConversions = 0 ;
+}
+
+@Override
+public String toString () {
+return "nb de conversions"+ nbConversions;
+}
 }
