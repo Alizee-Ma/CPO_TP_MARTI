@@ -15,6 +15,17 @@ public class TP2_convertisseurObjet_MARTI {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Convertisseur convertisseur = new Convertisseur();
+        
+        System.out.println("25°C en Celsuis : "+ convertisseur.CelciusVersKelvin(25)+ " Kelvin");
+        System.out.println("200K en Kelvin : "+ convertisseur.KelvinVersCelcius(200) + " Celcuis");
+         System.out.println("120°F en Farenheit : " + convertisseur.FarenheitVersCelcius(120)+ " Celcius");
+        System.out.println("0°C en Celcius : " + convertisseur.CelciusVersFarenheit(0)+ " Farenheit");
+        System.out.println("89°F en Farenheit : " + convertisseur.FarenheitVersKelvin(89)+" Celcius");
+        System.out.println("345.16K en Kelvin : " + convertisseur.KelvinVersFarenheit(345.16f)+ " Farenheit");
+        
+// Affichage du nombre total de conversions
+        System.out.println(convertisseur);
     }
     
 }
