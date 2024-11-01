@@ -16,5 +16,10 @@ public class TP2_manip_MARTI {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
+Tartiflette assiette1 = new Tartiflette(500);
+Tartiflette assiette2 = new Tartiflette(600);
+Tartiflette assiette3 = assiette2;
+System.out.println("Nombres de calories déans l'assiette 1 : " + assiette1);
+System.out.println("Nombres de calories déans l'assiette 2 : " + assiette2);
+System.out.println("Nombres de calories déans l'assiette 3 : " +assiette3);
 }
