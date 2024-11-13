@@ -9,5 +9,8 @@ package tp2_manip_marti;
  * @author alize
  */
 public class Moussaka {
-    
+    int nbCalories;
+    public Moussaka(int nbCalories) {
+        this.nbCalories = nbCalories;
+    }  
 }
