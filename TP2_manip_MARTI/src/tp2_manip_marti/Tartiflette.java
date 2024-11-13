@@ -9,5 +9,8 @@ package tp2_manip_marti;
  * @author alize
  */
 public class Tartiflette {
-    
+    int nbCalories; 
+    public Tartiflette(int nbCalories) {
+        this.nbCalories = nbCalories;
+    }
 }
