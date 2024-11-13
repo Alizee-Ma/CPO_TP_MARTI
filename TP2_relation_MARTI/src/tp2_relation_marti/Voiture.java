@@ -28,8 +28,7 @@ public void setProprietaire(Personne proprietaire) {
 
 @Override
 public String toString() {
-    String infoProprietaire = (proprietaire != null) ? "Proprietaire : "+proprietaire.prenom+""+proprietaire.nom+ : "Pas de proprietaire";
+    String infoProprietaire = (proprietaire != null) ? "Proprietaire : "+proprietaire.prenom+""+proprietaire.nom : "Pas de proprietaire";
     return "modèle : "+modele+" , marque : "+marque+", puissance : "+puissanceCv+ " CV, "+infoProprietaire;
 }
-
 }

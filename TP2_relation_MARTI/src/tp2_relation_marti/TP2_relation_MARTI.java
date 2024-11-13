@@ -22,7 +22,7 @@ public class TP2_relation_MARTI {
         Voiture uneMicra = new Voiture("Micra", "Nissan", 4);
 
         // Création des personnes
-        Personne bob = new Personne("Bobby", "Sixkiller");
+        Personne bob = new Personne("Boddy","Sixkiller");
         Personne reno = new Personne("Reno", "Raines");
 
         // Tentative d'ajout de voitures

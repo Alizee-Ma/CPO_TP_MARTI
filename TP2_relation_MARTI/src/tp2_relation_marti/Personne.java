@@ -31,12 +31,12 @@ public boolean ajouter_voiture(Voiture voiture_a_ajouter){
         System.out.println("Impossible d'ajouter une nouvelle voiture, "+prenom+ " "+nom+" possède déja 3 voitures.");
         return false;
     }
-    liste_voitures[nbVoitures]=voitures_a_ajouter;
+    liste_voitures[nbVoitures]=voiture_a_ajouter;
     nbVoitures++;
     
     voiture_a_ajouter.proprietaire = this;
-    System.out.println("La voiture " +voiture_a_ajouter.modele+ " a été ajoutée à " +prenom+ " " +nom+);
-   return true; 
+    System.out.println("La voiture " +voiture_a_ajouter.modele+ " a été ajoutée à " +prenom+ " " +nom);
+    return true; 
 }
 @Override
 public String toString() {
