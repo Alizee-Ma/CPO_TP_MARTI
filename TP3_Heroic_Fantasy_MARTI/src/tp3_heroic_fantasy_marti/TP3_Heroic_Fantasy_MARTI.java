@@ -4,6 +4,9 @@
  */
 package tp3_heroic_fantasy_marti;
 
+import Armes.Epee;
+import Armes.Baton;
+import Armes.Arme;
 import java.util.Vector;
 
 /**
