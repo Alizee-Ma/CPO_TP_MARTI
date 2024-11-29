@@ -8,7 +8,7 @@ package Armes;
  *
  * @author alize
  */
-public class Arme {
+public abstract  class Arme {
     private String nom;
     private int niveauAttaque; 
 
