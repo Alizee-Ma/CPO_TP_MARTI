@@ -8,6 +8,18 @@ package tp3_heroic_fantasy_marti;
  *
  * @author alize
  */
-public class Magicien {
+    public class Magicien extends Personnage {
+    private boolean confirme;
     
+    public Magicien(String nom, int niveau, boolean confirme) {
+        super(nom, niveau);
+        this.confirme = confirme;
+    }
+    public boolean isConfirme() {
+        return confirme;
+    }
+    public void setConfirme(boolean confirme) {
+        this.confirme = confirme;
+    }
 }
+

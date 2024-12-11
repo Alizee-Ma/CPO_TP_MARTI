@@ -7,6 +7,7 @@ package tp3_heroic_fantasy_marti;
 import Armes.Epee;
 import Armes.Baton;
 import Armes.Arme;
+import java.util.ArrayList;
 import java.util.Vector;
 
 /**
@@ -45,8 +46,28 @@ public class TP3_Heroic_Fantasy_MARTI {
         for (int i = 0; i < armes.size(); i++) {
             System.out.println(armes.elementAt(i));
         }
+        
+        // Création des magiciens
+        Magicien gandalf = new Magicien("Gandalf", 65, true);
+        Magicien garcimore = new Magicien("Garcimore", 44, false);
+
+        // Création des guerriers
+        Guerrier conan = new Guerrier("Conan", 78, false);  // à pied
+        Guerrier lannister = new Guerrier("Lannister", 45, true); // à cheval
+
+        // Tableau dynamique (ArrayList) pour stocker les personnages
+        ArrayList<Personnage> personnages = new ArrayList<>();
+        personnages.add(gandalf);
+        personnages.add(garcimore);
+        personnages.add(conan);
+        personnages.add(lannister);
+
+        // Affichage des caractéristiques des personnages
+        for (Personnage personnage : personnages) {
+            System.out.println(personnage.toString());
+        }
     }
-    
-}
+    }
+
     
 
