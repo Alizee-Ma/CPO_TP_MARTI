@@ -10,31 +10,48 @@ package Armes;
  */
 public abstract  class Arme {
     private String nom;
-    private int niveauAttaque; 
+    private String type; // Exemple : "épée", "bâton", etc.
+    private int puissance;
 
-    // Constructeur qui permet initialiser les paramètres
-    public Arme(String nom, int niveauAttaque) {
-        if (niveauAttaque > 100 || niveauAttaque < 0) {
-            throw new IllegalArgumentException("Le niveau d'attaque doit être compris entre 0 et 100.");
-        }
+    public Arme(String nom, String type, int puissance) {
         this.nom = nom;
-        this.niveauAttaque = niveauAttaque;
+        this.type = type;
+        this.puissance = puissance;
     }
 
-    // Methode pour obtenir le niveau d'attaque
-    public int getNiveauAttaque() {
-        return niveauAttaque;
-    }
-
-    // Methode pour obtenir le nom de l'arme
     public String getNom() {
         return nom;
     }
 
-    // Méthode toString pour afficher le nom et le niveau d'attaque
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getPuissance() {
+        return puissance;
+    }
+
+    public void setPuissance(int puissance) {
+        this.puissance = puissance;
+    }
+
     @Override
     public String toString() {
-        return "Arme: " + nom + ", Niveau d'attaque: " + niveauAttaque;
+        return "Arme{" +
+               "nom='" + nom + '\'' +
+               ", type='" + type + '\'' +
+               ", puissance=" + puissance +
+               '}';
     }
 }
+
+
 
