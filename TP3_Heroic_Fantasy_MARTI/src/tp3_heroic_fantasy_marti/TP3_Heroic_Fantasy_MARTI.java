@@ -31,10 +31,10 @@ public class TP3_Heroic_Fantasy_MARTI {
         Guerrier lannister = new Guerrier("Lannister", 45, true);
 
         // Création des armes
-        Arme batonFeu = new Arme("Bâton de Feu", "bâton", 50);
-        Arme batonGlace = new Arme("Bâton de Glace", "bâton", 45);
-        Arme epeeLongue = new Arme("Épée Longue", "épée", 60);
-        Arme lance = new Arme("Lance", "lance", 55);
+        Arme batonFeu = new Arme("Bâton de Feu", "bâton", 50) {};
+        Arme batonGlace = new Arme("Bâton de Glace", "bâton", 45) {};
+        Arme epeeLongue = new Arme("Épée Longue", "épée", 60) {};
+        Arme lance = new Arme("Lance", "lance", 55) {};
 
         // Ajout des armes à Gandalf
         gandalf.ajouterArme(batonFeu);

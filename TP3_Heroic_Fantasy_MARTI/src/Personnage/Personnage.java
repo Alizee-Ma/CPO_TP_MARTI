@@ -13,6 +13,14 @@ import Armes.Arme;
 import tp3_heroic_fantasy_marti.etreVivant;
 
 public abstract  class Personnage implements etreVivant{
+
+    static void incrementerMagiciens() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    static void incrementerGuerriers() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
  private String nom;
     private int niveau;
     private ArrayList<Arme> armes; // Liste dynamique pour les armes
@@ -23,7 +31,7 @@ public abstract  class Personnage implements etreVivant{
     // Attributs statiques pour suivre les statistiques globales
     private static int totalPersonnages = 0;
     static int totalGuerriers = 0;
-    private static int totalMagiciens = 0;
+    static int totalMagiciens = 0;
     
    
     public Personnage(String nom, int niveau, int pointsDeVie) {

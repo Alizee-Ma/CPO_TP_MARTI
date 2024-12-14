@@ -21,7 +21,7 @@ public class Baton extends Arme {
      * @param age          Âge du bâton (doit être compris entre 0 et 100 ans).
      */
     public Baton(String nom, int niveauAttaque, int age) {
-        super(nom, niveauAttaque); // Appelle le constructeur de la classe mère
+        super(nom, niveauAttaque); //probleme avec cette instruction partout 
         if (age < 0 || age > 100) {
             throw new IllegalArgumentException("L'âge du bâton doit être compris entre 0 et 100.");
         }

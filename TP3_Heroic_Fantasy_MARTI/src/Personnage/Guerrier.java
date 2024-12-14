@@ -4,8 +4,6 @@
  */
 package Personnage;
 
-import Personnage.Personnage;
-
 /**
  *
  * @author alize
@@ -46,6 +44,10 @@ public class Guerrier extends Personnage {
         } finally {
             super.finalize();
         }
+    }
+
+    public void equiperArme(String lance) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 

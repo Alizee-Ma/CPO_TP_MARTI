@@ -4,8 +4,6 @@
  */
 package Armes;
 
-import Armes.Arme;
-
 /**
  *
  * @author alize

@@ -4,8 +4,6 @@
  */
 package Personnage;
 
-import Personnage.Personnage;
-
 /**
  *
  * @author alize
@@ -45,6 +43,14 @@ import Personnage.Personnage;
         } finally {
             super.finalize();
         }
+    }
+
+    public void equiperArme(String bâton_de_Feu) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String compterArmesParType(String bâton) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 
