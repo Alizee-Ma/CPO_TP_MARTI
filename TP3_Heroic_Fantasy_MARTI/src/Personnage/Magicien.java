@@ -17,6 +17,7 @@ import Personnage.Personnage;
         super(nom, niveau);
         this.confirme = confirme;
         Personnage.totalMagiciens++;
+         Personnage.incrementerMagiciens();
     }
 
     public boolean isConfirme() {
@@ -35,6 +36,15 @@ import Personnage.Personnage;
                ", confirmé=" + (confirme ? "oui" : "non") +
                ", armeEnMain=" + (getArmeEnMain() != null ? getArmeEnMain().toString() : "Aucune") +
                '}';
+    }
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            // Décrémente le compteur des magiciens
+            Personnage.incrementerMagiciens();
+        } finally {
+            super.finalize();
+        }
     }
 }
 

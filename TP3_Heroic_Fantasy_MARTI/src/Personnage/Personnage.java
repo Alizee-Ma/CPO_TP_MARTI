@@ -10,29 +10,84 @@ package Personnage;
  */
   import java.util.ArrayList;
 import Armes.Arme;
+import tp3_heroic_fantasy_marti.etreVivant;
 
-public abstract  class Personnage {
-private String nom;
+public abstract  class Personnage implements etreVivant{
+ private String nom;
     private int niveau;
-    private final ArrayList<Arme> armes; // Tableau dynamique pour les armes
+    private ArrayList<Arme> armes; // Liste dynamique pour les armes
     private Arme armeEnMain; // Arme actuellement équipée
+    private int pointsDeVie;
+    
 
     // Attributs statiques pour suivre les statistiques globales
     private static int totalPersonnages = 0;
     static int totalGuerriers = 0;
-    static int totalMagiciens = 0;
-
-    public Personnage(String nom, int niveau) {
+    private static int totalMagiciens = 0;
+    
+   
+    public Personnage(String nom, int niveau, int pointsDeVie) {
         this.nom = nom;
         this.niveau = niveau;
         this.armes = new ArrayList<>();
         this.armeEnMain = null;
+        this.pointsDeVie = pointsDeVie;
 
         // Incrémente le compteur total des personnages
         totalPersonnages++;
     }
+    
+    @Override
+ public void seFatiguer(){
+        this.pointsDeVie -=10;
+        System.out.println(nom+ " se fatigue et perd 1à points de vie.");
+    }
+ 
+@Override
+    public boolean estVivant() {
+        return this.pointsDeVie > 0; // Si les points de vie sont positifs, le personnage est vivant
+    }
+    
+ @Override
+    public void estAttaque(int points) {
+        this.pointsDeVie -= points; // Le personnage perd des points de vie suite à l'attaque
+        System.out.println(nom + " a été attaqué et perd " + points + " points de vie.");
+    }
 
-    // Getters et setters
+    // Méthode finalize pour décrémenter les compteurs lors de la destruction de l'objet
+
+    /**public void seFatiguer(){
+        this.pointsDeVie -=10;
+        System.out.println(nom+ " se fatigue et perd 1à points de vie.");
+    }
+     *
+     * @throws Throwable
+     */
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            // Décrémente le compteur total des personnages
+            totalPersonnages--;
+
+            // Si le personnage est un guerrier ou un magicien, décrémente également
+            if (this instanceof Guerrier) {
+                totalGuerriers--;
+            } else if (this instanceof Magicien) {
+                totalMagiciens--;
+            }
+        } finally {
+            super.finalize(); // Assure que la méthode finalize de la classe parente est appelée
+        }
+    }
+
+    // Méthode statique pour afficher les statistiques globales
+    public static void afficherStatistiques() {
+        System.out.println("Total des personnages : " + totalPersonnages);
+        System.out.println("Total des guerriers : " + totalGuerriers);
+        System.out.println("Total des magiciens : " + totalMagiciens);
+    }
+
+    // Getters et setters pour nom et niveau
     public String getNom() {
         return nom;
     }
@@ -63,45 +118,7 @@ private String nom;
         }
     }
 
-    // Équiper une arme en fonction de son nom
-    public void equiperArme(String nomArme) {
-        for (Arme arme : armes) {
-            if (arme.getNom().equalsIgnoreCase(nomArme)) {
-                this.armeEnMain = arme;
-                System.out.println("Arme équipée : " + arme.getNom());
-                return;
-            }
-        }
-        System.out.println("Arme non trouvée dans l'inventaire : " + nomArme);
-    }
-
-    // Nombre d'armes d'un type spécifique
-    public int compterArmesParType(String type) {
-        int count = 0;
-        for (Arme arme : armes) {
-            if (arme.getType().equalsIgnoreCase(type)) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    // Méthode statique pour afficher les statistiques globales
-    public static void afficherStatistiques() {
-        System.out.println("Total des personnages : " + totalPersonnages);
-        System.out.println("Total des guerriers : " + totalGuerriers);
-        System.out.println("Total des magiciens : " + totalMagiciens);
-    }
-
-    // Méthodes statiques pour gérer les statistiques spécifiques
-    public static void incrementerGuerriers() {
-        totalGuerriers++;
-    }
-
-    public static void incrementerMagiciens() {
-        totalMagiciens++;
-    }
-
+    // Méthode toString pour afficher les informations du personnage
     @Override
     public String toString() {
         return "Personnage{" +

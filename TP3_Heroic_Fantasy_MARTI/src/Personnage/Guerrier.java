@@ -18,6 +18,7 @@ public class Guerrier extends Personnage {
         super(nom, niveau);
         this.aCheval = aCheval;
         Personnage.totalGuerriers++;
+         Personnage.incrementerGuerriers();
     }
 
     public boolean isaCheval() {
@@ -36,6 +37,15 @@ public class Guerrier extends Personnage {
                ", à cheval=" + (aCheval ? "oui" : "non") +
                ", armeEnMain=" + (getArmeEnMain() != null ? getArmeEnMain().toString() : "Aucune") +
                '}';
+    }
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            // Décrémente le compteur des guerriers
+            Personnage.incrementerGuerriers();
+        } finally {
+            super.finalize();
+        }
     }
 }
 
