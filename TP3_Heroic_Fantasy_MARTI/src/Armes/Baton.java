@@ -11,24 +11,49 @@ import Armes.Arme;
  * @author alize
  */
 public class Baton extends Arme {
-    private int age; 
+   private int age; // Âge du bâton, doit être compris entre 0 et 100 ans
 
-    // Constructeur pour initialiser tous les paramètres
+    /**
+     * Constructeur pour initialiser les paramètres du bâton.
+     * 
+     * @param nom          Nom du bâton.
+     * @param niveauAttaque Niveau d'attaque du bâton.
+     * @param age          Âge du bâton (doit être compris entre 0 et 100 ans).
+     */
     public Baton(String nom, int niveauAttaque, int age) {
-        super(nom, niveauAttaque); //permet d'appeler le constructeur de la classe parente
-        if (age > 100 || age < 0) {
+        super(nom, niveauAttaque); // Appelle le constructeur de la classe mère
+        if (age < 0 || age > 100) {
             throw new IllegalArgumentException("L'âge du bâton doit être compris entre 0 et 100.");
-            //Interrompt le code car l'age du baton n'est pas valide, il doit etre compris entre 0 et 100 ans
         }
         this.age = age;
     }
 
-    // Methode pour obtenir l'âge
+    /**
+     * Getter pour obtenir l'âge du bâton.
+     * 
+     * @return L'âge du bâton.
+     */
     public int getAge() {
         return age;
     }
 
-    // Methode pour inclure l'âge dans le ToString de la classe arme
+    /**
+     * Setter pour modifier l'âge du bâton avec validation.
+     * 
+     * @param age Nouvel âge du bâton (doit être compris entre 0 et 100 ans).
+     */
+    public void setAge(int age) {
+        if (age < 0 || age > 100) {
+            throw new IllegalArgumentException("L'âge du bâton doit être compris entre 0 et 100.");
+        }
+        this.age = age;
+    }
+
+    /**
+     * Redéfinition de la méthode toString pour inclure l'âge du bâton.
+     * 
+     * @return Une chaîne de caractères décrivant le bâton.
+     */
     @Override
     public String toString() {
         return super.toString() + ", Âge du bâton: " + age;

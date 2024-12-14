@@ -17,6 +17,7 @@ public class Guerrier extends Personnage {
     public Guerrier(String nom, int niveau, boolean aCheval) {
         super(nom, niveau);
         this.aCheval = aCheval;
+        Personnage.totalGuerriers++;
     }
 
     public boolean isaCheval() {

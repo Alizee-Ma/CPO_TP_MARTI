@@ -10,19 +10,29 @@ package Personnage;
  */
   import java.util.ArrayList;
 import Armes.Arme;
+
 public abstract  class Personnage {
-    private String nom;
+private String nom;
     private int niveau;
-    private ArrayList<Arme> armes; // Tableau dynamique pour les armes
+    private final ArrayList<Arme> armes; // Tableau dynamique pour les armes
     private Arme armeEnMain; // Arme actuellement équipée
+
+    // Attributs statiques pour suivre les statistiques globales
+    private static int totalPersonnages = 0;
+    static int totalGuerriers = 0;
+    static int totalMagiciens = 0;
 
     public Personnage(String nom, int niveau) {
         this.nom = nom;
         this.niveau = niveau;
         this.armes = new ArrayList<>();
         this.armeEnMain = null;
+
+        // Incrémente le compteur total des personnages
+        totalPersonnages++;
     }
 
+    // Getters et setters
     public String getNom() {
         return nom;
     }
@@ -65,7 +75,7 @@ public abstract  class Personnage {
         System.out.println("Arme non trouvée dans l'inventaire : " + nomArme);
     }
 
-    // Nombre d'armes d'un type spécifique (Challenge)
+    // Nombre d'armes d'un type spécifique
     public int compterArmesParType(String type) {
         int count = 0;
         for (Arme arme : armes) {
@@ -76,6 +86,22 @@ public abstract  class Personnage {
         return count;
     }
 
+    // Méthode statique pour afficher les statistiques globales
+    public static void afficherStatistiques() {
+        System.out.println("Total des personnages : " + totalPersonnages);
+        System.out.println("Total des guerriers : " + totalGuerriers);
+        System.out.println("Total des magiciens : " + totalMagiciens);
+    }
+
+    // Méthodes statiques pour gérer les statistiques spécifiques
+    public static void incrementerGuerriers() {
+        totalGuerriers++;
+    }
+
+    public static void incrementerMagiciens() {
+        totalMagiciens++;
+    }
+
     @Override
     public String toString() {
         return "Personnage{" +
@@ -84,5 +110,6 @@ public abstract  class Personnage {
                ", armeEnMain=" + (armeEnMain != null ? armeEnMain.toString() : "Aucune") +
                '}';
     }
+
 }
 

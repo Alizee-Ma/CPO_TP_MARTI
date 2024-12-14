@@ -16,6 +16,7 @@ import Personnage.Personnage;
     public Magicien(String nom, int niveau, boolean confirme) {
         super(nom, niveau);
         this.confirme = confirme;
+        Personnage.totalMagiciens++;
     }
 
     public boolean isConfirme() {
